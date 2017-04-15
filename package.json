@@ -1,6 +1,6 @@
 {
   "name": "ember-gen-helpers",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ember hbs template helpers for managing css transition classes and generators in hbs",
   "keywords": [
     "ember-addon",
