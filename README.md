@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/foxnewsnetwork/ember-gen-helpers.svg?branch=master)](https://travis-ci.org/foxnewsnetwork/ember-gen-helpers)
+
 # ember-gen-helpers
 Ember template helpers for manipulating generators in particular for handling css-based transitions 
 
