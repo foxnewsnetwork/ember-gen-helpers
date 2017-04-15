@@ -15,7 +15,7 @@ module.exports = {
 
     registry.add('htmlbars-ast-plugin', {
       name: 'gen-take',
-      plugin: require('./lib/gen-take-transform'),
+      plugin: require('./lib/gen-transform'),
       baseDir() {
         return __dirname;
       }

@@ -1,0 +1,44 @@
+<div class='index'>
+  <div class='index__control'>
+    {{#let (get
+      (gen-wrap-transform-class isAnimating
+        'index__anime-square--x1-y0'
+        'index__anime-square--x1-y1'
+        'index__anime-square--x0-y1'
+        'index__anime-square--x0-y0'
+        onDone=(action (mut isAnimating) false))
+      'value')  as |animationClass|}}
+      <div class='index__anime-square {{animationClass}}'>
+        <img src='/assets/images/star.png' class='index__anime-image'>
+      </div>
+      <div class='index__anime-debug'>
+        {{animationClass}}
+      </div>
+      <div class='index__anime-controls'>
+        <button class='index__anime-btn' {{action (mut isAnimating) true}}>
+          Animate!
+        </button>
+      </div>
+    {{/let}}
+  </div>
+  <div class='index__gen-anime'>
+    {{#let (gen-anime isTransforming
+        'index__anime-square--x1-y0'
+        'index__anime-square--x1-y1'
+        'index__anime-square--x0-y1'
+        'index__anime-square--x0-y0'
+        onDone=(action (mut isTransforming) false)) as |animationClass|}}
+      <div class='index__anime-square {{animationClass}}'>
+        <img src='/assets/images/star.png' class='index__anime-image'>
+      </div>
+      <div class='index__anime-debug'>
+        {{animationClass}}
+      </div>
+      <div class='index__anime-controls'>
+        <button class='index__anime-btn' {{action (mut isTransforming) true}}>
+          Animate!
+        </button>
+      </div>
+    {{/let}}
+  </div>
+</div>

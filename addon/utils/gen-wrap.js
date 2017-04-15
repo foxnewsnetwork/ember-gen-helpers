@@ -42,7 +42,7 @@ const GenWrap = Ember.Object.extend({
       getWithDefault(this, 'onDone', NOOP).call(this, output);
       return set(this, 'isDone', true);
     };
-    const onThrow = (error) => { 
+    const onThrow = (error) => {
       getWithDefault(this, 'onThrow', NOOP).call(this, error);
       set(this, 'isThrow', true);
       return error
@@ -52,8 +52,22 @@ const GenWrap = Ember.Object.extend({
   }
 });
 
+/**
+ * Creates an es6 generator
+ *
+ * @param {function*() | ES6 Generator} fstar
+ * @param {Array} params
+ */
+function makeGenerator(fstar, params) {
+  if (typeof fstar === 'function') {
+    return fstar(...params);
+  } else {
+    return fstar;
+  }
+}
+
 export default function genWrap(fstar, params=[], opts={}) {
-  const _localGenerator = fstar(...params);
+  const _localGenerator = makeGenerator(fstar, params);
 
   return GenWrap.create(Object.assign({}, opts, { _localGenerator }));
 }
