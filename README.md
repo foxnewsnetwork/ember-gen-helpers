@@ -94,6 +94,8 @@ With the `{{gen-anime}}` helper, we can skip the ember component creation step:
 
 This has the benefit of making the animation process entirely css and hbs (no javascript) and has the additional benefit of being more declarative
 
+See it working here: https://foxnewsnetwork.github.io/ember-gen-helpers
+
 ### gen-wrap
 TODO
 
