@@ -13,6 +13,7 @@ describe('Acceptance | sandbox gen take', function() {
   before(function(done) {
     application = startApp();
     Sandbox.visit();
+    this.timeout(5000);
     andThen(() => done());    
   });
 
@@ -35,6 +36,7 @@ describe('Acceptance | sandbox gen take', function() {
 
   describe('reslts', function() {
     before(function(done) {
+      this.timeout(5000);
       r200().then(done);
     });
     it('should render the correct result on vanilla', function() {
